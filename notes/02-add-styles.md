@@ -13,7 +13,7 @@
 2. Imported into the `+layout.svelte` file.
 
 ```typescript
-<script>
+<script lang="ts">
     import "../app.pcss"
 </script>
 
