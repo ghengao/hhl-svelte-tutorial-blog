@@ -16,6 +16,10 @@ To install these dependencies, you can use the following command:
 pnpm install open-props lucide @fontsource/manrope @fontsource/jetbrains-mono
 ```
 
+Besides these declared dependencies, the project also uses the following resources:
+
+- [Fav Farm](https://fav.farm/): A free favicon generator that can be used to generate favicons for the project.
+
 # Contribution
 
 Once you've created a project and installed dependencies with `pnpm install`
