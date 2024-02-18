@@ -15,11 +15,12 @@ pnpm install open-props lucide @fontsource/manrope @fontsource/jetbrains-mono
 ## Dev Dependencies
 
 - [PostCSS](https://postcss.org/): A tool for transforming CSS with JavaScript.
+- [Mdsvex](https://mdsvex.pngwn.io/): A markdown preprocessor for SvelteKit that allows you to write markdown in your SvelteKit components.
 
 To install these dependencies, you can use the following command:
 
 ```bash
-pnpm install -D postcss
+pnpm install -D postcss mdsvex
 ```
 
 ## Other

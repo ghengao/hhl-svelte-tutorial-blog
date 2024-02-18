@@ -3,20 +3,18 @@
 </script>
 
 <footer>
-    <p>
-        {config.title} &copy; {new Date().getFullYear()}
-    </p>
+	<p>
+		{config.title} &copy; {new Date().getFullYear()}
+	</p>
 </footer>
 
-
 <style>
-    footer {
-        padding-block: var(--size-7);
-        border-top: 1px solid var(--border);
-        /* text-align: center; */
-    }
+	footer {
+		padding-block: var(--size-7);
+		border-top: 1px solid var(--border);
+	}
 
-    p {
-        color: var(--text-2);
-    }
+	p {
+		color: var(--text-2);
+	}
 </style>
