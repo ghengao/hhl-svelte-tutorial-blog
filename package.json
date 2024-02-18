@@ -25,6 +25,7 @@
 		"postcss": "^8.4.35",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
+		"shiki": "^1.1.5",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.0",
 		"tslib": "^2.4.1",
@@ -36,6 +37,7 @@
 		"@fontsource/jetbrains-mono": "^5.0.18",
 		"@fontsource/manrope": "^5.0.18",
 		"lucide": "^0.331.0",
-		"open-props": "^1.6.18"
+		"open-props": "^1.6.18",
+		"pnpm": "^8.15.3"
 	}
 }

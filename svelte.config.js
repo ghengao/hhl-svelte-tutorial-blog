@@ -1,10 +1,24 @@
 import adapter from '@sveltejs/adapter-auto';
-import { mdsvex } from 'mdsvex';
+import { escapeSvelte, mdsvex } from 'mdsvex';
+import {codeToHtml} from 'shiki';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('mdsvex').MdsvexCompileOptions} **/
 const mdsvexOptions = {
-	extensions: ['.svx', '.md']
+	extensions: ['.svx', '.md'],
+	layout: {
+		_: 'src/mdsvex.svelte'
+	},
+	highlight: {
+		highlighter: async (code, lang = 'text') => {
+			// Use shiki to convert markdown code to html
+			const html = await codeToHtml(code, {lang, theme: 'poimandres'});
+			// Need to escape the html to use it in svelte
+			const escHtml = escapeSvelte(html);
+			// Need to wrap the html in a svelte {@html} tag to bypass svelte's html sanitization
+			return `{@html \`${escHtml}\`}`;
+		}
+	}
 };
 
 /** @type {import('@sveltejs/kit').Config} */
