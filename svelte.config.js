@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-vercel';
 import { escapeSvelte, mdsvex } from 'mdsvex';
 import { codeToHtml } from 'shiki';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';

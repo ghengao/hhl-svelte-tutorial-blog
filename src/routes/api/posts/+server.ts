@@ -1,5 +1,6 @@
 import type { Post } from '$lib/types';
 import { json } from '@sveltejs/kit';
+export const prerender = true;
 
 // This function is called every time the api endpoint is called.
 // ? Is there a better way to cache the posts? Cos after all they are static
