@@ -1,7 +1,11 @@
 import adapter from '@sveltejs/adapter-auto';
 import { escapeSvelte, mdsvex } from 'mdsvex';
-import {codeToHtml} from 'shiki';
+import { codeToHtml } from 'shiki';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+
+import remarkUnwrapImages from 'remark-unwrap-images';
+import remarkToc from 'remark-toc';
+import rehypeSlug from 'rehype-slug';
 
 /** @type {import('mdsvex').MdsvexCompileOptions} **/
 const mdsvexOptions = {
@@ -12,13 +16,15 @@ const mdsvexOptions = {
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
 			// Use shiki to convert markdown code to html
-			const html = await codeToHtml(code, {lang, theme: 'poimandres'});
+			const html = await codeToHtml(code, { lang, theme: 'poimandres' });
 			// Need to escape the html to use it in svelte
 			const escHtml = escapeSvelte(html);
 			// Need to wrap the html in a svelte {@html} tag to bypass svelte's html sanitization
 			return `{@html \`${escHtml}\`}`;
 		}
-	}
+	},
+	remarkPlugins: [remarkUnwrapImages, [remarkToc, { tight: true }]],
+	rehypePlugins: [rehypeSlug],
 };
 
 /** @type {import('@sveltejs/kit').Config} */

@@ -8,6 +8,14 @@
 		<meta name="description" content="Your description here" />
 		<meta name="keywords" content="keyword1, keyword2, keyword3" />
 		%sveltekit.head%
+		<script type="module">
+			const theme = localStorage.getItem('color-scheme');
+			if (theme) {
+				document.documentElement.setAttribute('color-scheme', theme);
+			} else {
+				localStorage.setItem('color-scheme', 'light');
+			}
+		</script>
 	</head>
 	<body>
 		<div>%sveltekit.body%</div>

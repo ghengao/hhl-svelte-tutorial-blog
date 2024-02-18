@@ -12,6 +12,10 @@ tags:
   - learning
 ---
 
+## Table of Contents
+
+## Description
+
 This is the first post of the blog. It is created to learn how to use SvelteKit to create a markdown blog. The related blog post for this tutorial can be found in [here](https://joyofcode.xyz/sveltekit-markdown-blog#project-setup).
 
 ## Introduction

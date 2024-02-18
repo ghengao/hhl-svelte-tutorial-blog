@@ -20,7 +20,23 @@ title: First Post
 ```
 
 ## Customizing the mdsvex generated html
-> Layout components receive all frontmatter values as props, which should provide a great deal of flexibility when designing your layouts.
+> Layout components receive all front-matter values as props, which should provide a great deal of flexibility when designing your layouts.
+
+### Define a mdsvex layout
+
+```ts
+// src/mdsvex.svelte
+<script lang="ts" context="module">
+	import { img } from '$lib/components/custom';
+	export { img };
+</script>
+
+<slot />
+```
+
+```ts
+
+```
 
 ```ts
 // sevelte.config.js
@@ -32,3 +48,4 @@ const mdsvexOptions = {
 	...
 };
 ```
+
